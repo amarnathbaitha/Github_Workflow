@@ -27,4 +27,4 @@ jobs:
         run: echo "This is step one on Windows"
 
       - name: Step two
-        run: Get-ChildItem Env: | Sort-Object Name
+        run: "Get-ChildItem Env: | Sort-Object Name"
