@@ -9,10 +9,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
       - name: Step one
         run: echo "This is step one on Ubuntu"
-      
+
       - name: Step two
         run: env | sort
 
@@ -25,6 +25,6 @@ jobs:
 
       - name: Step one
         run: echo "This is step one on Windows"
-      
+
       - name: Step two
         run: Get-ChildItem Env: | Sort-Object Name
