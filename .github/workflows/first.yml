@@ -3,19 +3,28 @@ name: githubWorkflow
 on: push
 
 jobs:
-    job1:
-        name: First Job
+  job1:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v2
-        runs-on: ubuntu-latest
-        steps:
-       -name: step one
-       -name: step two
+      
+      - name: Step one
+        run: echo "This is step one on Ubuntu"
+      
+      - name: Step two
         run: env | sort
-    job2:
-        name: Second Job
+
+  job2:
+    name: Second Job
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v2
-        runs-on: windows-latest
-        steps:
-       -name: step one
-       -name: step two
-        run: "Get=ChildItem Evn: | Sort-Object Name"
+
+      - name: Step one
+        run: echo "This is step one on Windows"
+      
+      - name: Step two
+        run: Get-ChildItem Env: | Sort-Object Name
